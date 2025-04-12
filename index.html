@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vert Éden | Artisan Paysagiste</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600566752227-8f61e8a3cc13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-leaf text-2xl text-green-600 mr-2"></i>
+                <h1 class="text-xl font-bold text-gray-800">Vert Éden</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#accueil" class="text-green-600 font-medium">Accueil</a>
+                <a href="#services" class="hover:text-green-600 transition">Services</a>
+                <a href="#realisations" class="hover:text-green-600 transition">Réalisations</a>
+                <a href="#a-propos" class="hover:text-green-600 transition">À propos</a>
+                <a href="#contact" class="hover:text-green-600 transition">Contact</a>
+            </nav>
+            <button class="md:hidden focus:outline-none" id="menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white py-2 px-4 shadow-lg" id="mobile-menu">
+            <a href="#accueil" class="block py-2 text-green-600 font-medium">Accueil</a>
+            <a href="#services" class="block py-2 hover:text-green-600 transition">Services</a>
+            <a href="#realisations" class="block py-2 hover:text-green-600 transition">Réalisations</a>
+            <a href="#a-propos" class="block py-2 hover:text-green-600 transition">À propos</a>
+            <a href="#contact" class="block py-2 hover:text-green-600 transition">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero h-screen flex items-center justify-center text-white pt-16">
+        <div class="text-center px-6 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Créez votre oasis de verdure</h1>
+            <p class="text-xl md:text-2xl mb-8">Artisan paysagiste passionné, je transforme vos espaces extérieurs en véritables havres de paix.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">Demander un devis</a>
+                <a href="#realisations" class="bg-white hover:bg-gray-100 text-green-700 px-8 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">Voir nos réalisations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nos Services</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">Des solutions sur mesure pour tous vos projets paysagers, de la conception à la réalisation.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 p-6 border border-gray-100">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Aménagement paysager</h3>
+                    <p class="text-gray-600">Conception et création d'espaces verts harmonieux, adaptés à vos besoins et à votre environnement.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 p-6 border border-gray-100">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Systèmes d'arrosage</h3>
+                    <p class="text-gray-600">Installation de systèmes d'arrosage automatique économes en eau et parfaitement adaptés à votre jardin.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 p-6 border border-gray-100">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Entretien de jardins</h3>
+                    <p class="text-gray-600">Services d'entretien régulier pour préserver la beauté et la santé de vos espaces verts toute l'année.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 p-6 border border-gray-100">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Terrasses et allées</h3>
+                    <p class="text-gray-600">Création de terrasses et allées en bois, pierre ou composite pour agrémenter votre extérieur.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 p-6 border border-gray-100">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Éclairage extérieur</h3>
+                    <p class="text-gray-600">Mise en valeur de votre jardin par un éclairage artistique et fonctionnel pour profiter de vos espaces jour et nuit.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 p-6 border border-gray-100">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Jardins écologiques</h3>
+                    <p class="text-gray-600">Création de jardins respectueux de l'environnement avec des espèces locales et des techniques durables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Realisations Section -->
+    <section id="realisations" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nos Réalisations</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">Découvrez quelques-uns de nos projets récents qui témoignent de notre savoir-faire.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Jardin moderne" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold">Jardin contemporain</h3>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Terrasse en bois" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold">Terrasse naturelle</h3>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Jardin japonais" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold">Jardin zen</h3>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Allée paysagère" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold">Allée fleurie</h3>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Jardin de ville" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold">Jardin urbain</h3>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Bassin naturel" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold">Bassin écologique</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                    Voir plus de réalisations
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="a-propos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artisan paysagiste" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">À propos de Vert Éden</h2>
+                    <div class="w-20 h-1 bg-green-600 mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+                        Passionné par la nature depuis mon plus jeune âge, j'ai transformé cette passion en métier après avoir obtenu mon diplôme en aménagement paysager. Avec plus de 15 ans d'expérience, je mets mon savoir-faire au service de vos projets.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Mon approche allie créativité, respect de l'environnement et connaissance approfondie des végétaux. Chaque projet est unique et je m'engage à créer des espaces qui reflètent votre personnalité tout en s'intégrant harmonieusement à leur environnement.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span>Artisan qualifié</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span>Matériaux de qualité</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span>Approche écologique</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span>Suivi personnalisé</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium inline-block transition duration-300 transform hover:scale-105">
+                        Contactez-moi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-green-700 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Témoignages</h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+                <p class="mt-6 max-w-2xl mx-auto">Ce que disent nos clients satisfaits</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"Notre jardin a été complètement transformé. L'attention aux détails et la qualité du travail sont exceptionnelles. Nous recommandons vivement !"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sophie Martin</h4>
+                            <p class="text-green-200">Propriétaire à Lyon</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"Un professionnel à l'écoute qui a su concrétiser nos idées tout en apportant son expertise. Le résultat dépasse nos attentes."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Pierre Dubois</h4>
+                            <p class="text-green-200">Propriétaire à Villeurbanne</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"Service impeccable de A à Z. Respect des délais, propreté du chantier et résultat magnifique. Nous sommes ravis de notre nouvelle terrasse."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Élodie Bernard</h4>
+                            <p class="text-green-200">Propriétaire à Caluire</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contactez-nous</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">Prêt à transformer votre espace extérieur ? Discutons de votre projet.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Téléphone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Votre projet</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                            Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg p-8 h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Coordonnées</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-green-600 text-xl mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Adresse</h4>
+                                    <p class="text-gray-600">123 Rue des Jardins, 69000 Lyon</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-green-600 text-xl mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Téléphone</h4>
+                                    <p class="text-gray-600">04 12 34 56 78</p>
+                                    <p class="text-gray-600">06 12 34 56 78</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-green-600 text-xl mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">contact@verteden-paysagiste.fr</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-green-600 text-xl mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Horaires</h4>
+                                    <p class="text-gray-600">Lundi - Vendredi: 8h - 18h</p>
+                                    <p class="text-gray-600">Samedi: 9h - 12h</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.349347380904!2d4.835765315567558!3d45.7641799791056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea9c9747f3a9%3A0x1e3e1b7f0e1b7f0e!2sLyon!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-leaf text-2xl text-green-400 mr-2"></i>
+                        <h3 class="text-xl font-bold">Vert Éden</h3>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">Artisan paysagiste passionné créant des espaces verts uniques et harmonieux depuis 2008.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Liens utiles</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                            <li><a href="#realisations" class="text-gray-400 hover:text-white transition">Réalisations</a></li>
+                            <li><a href="#a-propos" class="text-gray-400 hover:text-white transition">À propos</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Aménagement paysager</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Entretien de jardins</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Terrasses et allées</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Éclairage extérieur</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Systèmes d'arrosage</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Informations</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">CGV</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Vert Éden - Tous droits réservés</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
